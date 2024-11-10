@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc0528b0-5c24-4299-9ed1-7ed9a0df2818" name="Changes" comment="add requirements">
-      <change afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/word.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/web_fetch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/words.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/responser_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/wiki_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/web_fetch.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/web_fetch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/words.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/words.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/wiki_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/web_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.dict_backend.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "refactoring",
-    "last_opened_file_path": "C:/Users/oiiva/Desktop/Finglish/python_projects/dict_backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.dict_backend.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oiiva/Desktop/Finglish/python_projects/dict_backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend" />
@@ -110,7 +106,10 @@
       <workItem from="1730550010479" duration="451000" />
       <workItem from="1730550645442" duration="1856000" />
       <workItem from="1730797575432" duration="12029000" />
-      <workItem from="1731181846244" duration="3230000" />
+      <workItem from="1731181846244" duration="3440000" />
+      <workItem from="1731263241021" duration="3595000" />
+      <workItem from="1731268299895" duration="903000" />
+      <workItem from="1731274255476" duration="2987000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <option name="closed" value="true" />
@@ -151,6 +150,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="add requirements" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dict_backend$dict_backend.coverage" NAME="dict_backend Coverage Results" MODIFIED="1731184480512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dict_backend$dict_backend.coverage" NAME="dict_backend Coverage Results" MODIFIED="1731276643196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

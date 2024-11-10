@@ -102,11 +102,23 @@ async def search_words(word: str):
 
     return results
 
+from fastapi import HTTPException
+
 @router.post("/")
 async def add_word(word_data: WordData):
     print("Received data:", word_data.dict())
     conn = get_db_connection()
     with conn.cursor() as cursor:
+        # Check if the word already exists in the database
+        cursor.execute("SELECT id FROM finnish_dictionary WHERE word = %s", (word_data.word,))
+        existing_word = cursor.fetchone()
+
+        if existing_word:
+            # Word already exists, return a message without adding
+            conn.close()
+            raise HTTPException(status_code=409, detail="Word already exists in the dictionary")
+
+        # Insert the word if it doesn't exist
         cursor.execute("""
             INSERT INTO finnish_dictionary (
                 date_added, date_repeated, level, word, translation, 
@@ -123,7 +135,6 @@ async def add_word(word_data: WordData):
         new_id = cursor.fetchone()[0]
         conn.commit()
     conn.close()
-
     return {"message": "Word added successfully", "id": new_id}
 
 @router.put("/{word_id}")
@@ -256,3 +267,21 @@ async def upgrade_words_level(
 
     return {"message": "Selected words have been upgraded to the next level"}
 
+@router.delete("/{word_id}")
+async def delete_word(word_id: int):
+    conn = get_db_connection()
+    with conn.cursor() as cursor:
+        # Check if the word exists
+        cursor.execute("SELECT id FROM finnish_dictionary WHERE id = %s", (word_id,))
+        word = cursor.fetchone()
+
+        if not word:
+            conn.close()
+            raise HTTPException(status_code=404, detail="Word not found")
+
+        # Delete the word
+        cursor.execute("DELETE FROM finnish_dictionary WHERE id = %s", (word_id,))
+        conn.commit()
+    conn.close()
+
+    return {"message": "Word deleted successfully"}
