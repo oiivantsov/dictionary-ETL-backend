@@ -1,6 +1,6 @@
-from fastapi import APIRouter, HTTPException, Query, Body
+from fastapi import APIRouter, Query, Body
 from typing import List, Dict, Any, Optional
-from app.database import get_db_connection
+from app.config.database import get_db_connection
 from app.models.word import WordData
 from psycopg2.extras import RealDictCursor
 

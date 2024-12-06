@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query, HTTPException
-from app.utils.web_parser import fetch_wiki_ENG, fetch_wiki_FI, fetch_slang
+from app.utils.web_scraper import fetch_wiki_ENG, fetch_wiki_FI, fetch_slang
 
 router = APIRouter(prefix="/api")
 
