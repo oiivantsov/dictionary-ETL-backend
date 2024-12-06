@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc0528b0-5c24-4299-9ed1-7ed9a0df2818" name="Changes" comment="add gitignore">
-      <change afterPath="$PROJECT_DIR$/app/utils/scrapers/urban_scraper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/scrapers/wiktionary_eng_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/web_scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/web_fetch.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/web_fetch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/words.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/words.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/web_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiktionary_sanakirja_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/scrapers/wiktionary_sanakirja_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiktionaryparser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.dict_backend.executor": "Run",
-    "Python.wiktionary_eng_parser.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/oiiva/Desktop/Finglish/python_projects/dict_backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.dict_backend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wiktionary_eng_parser.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/oiiva/Desktop/Finglish/python_projects/dict_backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend" />
@@ -132,7 +123,7 @@
       <workItem from="1732137859460" duration="1731000" />
       <workItem from="1732833820456" duration="111000" />
       <workItem from="1733016268978" duration="1199000" />
-      <workItem from="1733437797304" duration="8152000" />
+      <workItem from="1733437797304" duration="8346000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <option name="closed" value="true" />

@@ -49,7 +49,8 @@ class WiktionaryParserENG:
         examples = ""
         synonyms = ""
         part_of_speech = word_tag.find_previous('h3').text
-        etymology = word_tag.find_previous(id='Etymology').parent.next_sibling.text
+        etymology = word_tag.find_previous(id='Etymology')
+        etymology = etymology.parent.next_sibling.text if etymology and etymology.parent and etymology.parent.next_sibling else ""
 
         # definitions and examples
 
@@ -89,3 +90,8 @@ class WiktionaryParserENG:
             "synonyms": synonyms,
             "etymology": etymology
         }
+
+wp = WiktionaryParserENG()
+res_dict = wp.fetch('saali')
+for (k, v) in res_dict.items():
+    print(k, v)
