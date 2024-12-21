@@ -226,24 +226,39 @@ async def add_word_to_study(word_id: int, date_repeated: str, level: int = 1):
 
 
 @router.get("/repeat")
-async def get_words_for_repeat(level: int = Query(..., description="The level of words to repeat")):
+async def get_words_for_repeat(
+        level: int = Query(..., description="The level of words to repeat"),
+        days_since_last_repeat: int = Query(None, description="Optional filter for days since last repeat")
+):
     query = """
-    SELECT *, (CURRENT_DATE - date_repeated) AS daysSinceLastRepeat 
-    FROM finnish_dictionary 
+    SELECT *, (CURRENT_DATE - date_repeated) AS daysSinceLastRepeat
+    FROM finnish_dictionary
     WHERE level = %s
-      AND (CURRENT_DATE - date_repeated) = (
-          SELECT MAX(CURRENT_DATE - date_repeated) 
-          FROM finnish_dictionary 
-          WHERE level = %s
-      )
     """
+
+    if days_since_last_repeat is not None:
+        # If specific days are provided, filter by it
+        query += " AND (CURRENT_DATE - date_repeated) = %s"
+        params = [level, days_since_last_repeat]
+    else:
+        # If no specific days are provided, find the max days
+        query += """
+          AND (CURRENT_DATE - date_repeated) = (
+              SELECT MAX(CURRENT_DATE - date_repeated) 
+              FROM finnish_dictionary 
+              WHERE level = %s
+          )
+        """
+        params = [level, level]
+
     conn = get_db_connection()
     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-        cursor.execute(query, (level, level))
+        cursor.execute(query, tuple(params))
         results = cursor.fetchall()
     conn.close()
 
     return results
+
 
 @router.post("/upgrade")
 async def upgrade_words_level(
