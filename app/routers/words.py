@@ -259,6 +259,21 @@ async def get_words_for_repeat(
 
     return results
 
+@router.get("/level-days")
+async def get_level_days():
+    conn = get_db_connection()
+    with conn.cursor() as cursor:
+        cursor.execute("""
+            SELECT level, MAX(CURRENT_DATE - date_repeated) AS daysSinceLastRepeat
+            FROM finnish_dictionary
+            GROUP BY level
+            having level between 1 and 12
+            order by level
+        """)
+        results = cursor.fetchall()
+    conn.close()
+
+    return results
 
 @router.post("/upgrade")
 async def upgrade_words_level(
