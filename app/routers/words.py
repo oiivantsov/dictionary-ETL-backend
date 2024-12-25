@@ -3,6 +3,7 @@ from typing import List, Dict, Any, Optional
 from app.config.database import get_db_connection
 from app.models.word import WordData
 from psycopg2.extras import RealDictCursor
+from datetime import date, timedelta
 
 router = APIRouter(prefix="/api/words")
 
@@ -230,28 +231,33 @@ async def get_words_for_repeat(
         level: int = Query(..., description="The level of words to repeat"),
         days_since_last_repeat: int = Query(None, description="Optional filter for days since last repeat")
 ):
-    query = """
-    SELECT *, (CURRENT_DATE - date_repeated) AS daysSinceLastRepeat
-    FROM finnish_dictionary
-    WHERE level = %s
-    """
+    conn = get_db_connection()
 
     if days_since_last_repeat is not None:
-        # If specific days are provided, filter by it
-        query += " AND (CURRENT_DATE - date_repeated) = %s"
-        params = [level, days_since_last_repeat]
+        # Calculate the target date based on the provided number of days
+        target_date = date.today() - timedelta(days=days_since_last_repeat)
+        query = """
+        SELECT *, CURRENT_DATE - date_repeated AS daysSinceLastRepeat
+        FROM finnish_dictionary
+        WHERE level = %s
+          AND date_repeated = %s
+        """
+        params = [level, target_date]
     else:
-        # If no specific days are provided, find the max days
-        query += """
-          AND (CURRENT_DATE - date_repeated) = (
-              SELECT MAX(CURRENT_DATE - date_repeated) 
-              FROM finnish_dictionary 
-              WHERE level = %s
-          )
+        # Use a CTE to find the maximum date_repeated and filter words
+        query = """
+        WITH max_date_cte AS (
+            SELECT MAX(date_repeated) AS max_date
+            FROM finnish_dictionary
+            WHERE level = %s
+        )
+        SELECT *, CURRENT_DATE - date_repeated AS daysSinceLastRepeat
+        FROM finnish_dictionary
+        WHERE level = %s
+          AND date_repeated = (SELECT max_date FROM max_date_cte)
         """
         params = [level, level]
 
-    conn = get_db_connection()
     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
         cursor.execute(query, tuple(params))
         results = cursor.fetchall()
