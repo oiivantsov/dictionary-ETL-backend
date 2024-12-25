@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fc0528b0-5c24-4299-9ed1-7ed9a0df2818" name="Changes" comment="add gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/words.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/words.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,7 @@
       <workItem from="1734862253957" duration="198000" />
       <workItem from="1734871170487" duration="118000" />
       <workItem from="1734890324271" duration="466000" />
-      <workItem from="1735155611093" duration="1276000" />
+      <workItem from="1735155611093" duration="2629000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <option name="closed" value="true" />
@@ -175,7 +174,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="add requirements" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dict_backend$dict_backend.coverage" NAME="dict_backend Coverage Results" MODIFIED="1734871170712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dict_backend$dict_backend.coverage" NAME="dict_backend Coverage Results" MODIFIED="1735156715996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/dict_backend$wiktionary_eng_parser.coverage" NAME="wiktionary_eng_parser Coverage Results" MODIFIED="1733446686008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils/scrapers" />
   </component>
 </project>

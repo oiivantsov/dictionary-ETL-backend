@@ -26,10 +26,10 @@ async def search_words(word: Optional[str] = None, translation: Optional[str] = 
     query = "SELECT *, (CURRENT_DATE - date_repeated) AS days_since_last_repeat FROM finnish_dictionary WHERE"
     params = []
     if word:
-        query += " word ILIKE %s"
+        query += " LOWER(word) ILIKE %s"
         params.append(f"%{word}%")
     elif translation:
-        query += " translation ILIKE %s"
+        query += " LOWER(translation) ILIKE %s"
         params.append(f"%{translation}%")
 
     # Execute query and fetch results
