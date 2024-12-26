@@ -246,15 +246,15 @@ async def get_words_for_repeat(
     else:
         # Use a CTE to find the maximum date_repeated and filter words
         query = """
-        WITH max_date_cte AS (
-            SELECT MAX(date_repeated) AS max_date
+        WITH min_date_cte AS (
+            SELECT MIN(date_repeated) AS min_date
             FROM finnish_dictionary
             WHERE level = %s
         )
         SELECT *, CURRENT_DATE - date_repeated AS daysSinceLastRepeat
         FROM finnish_dictionary
         WHERE level = %s
-          AND date_repeated = (SELECT max_date FROM max_date_cte)
+          AND date_repeated = (SELECT min_date FROM min_date_cte)
         """
         params = [level, level]
 
