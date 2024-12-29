@@ -211,21 +211,6 @@ async def filter_words(
     return results
 
 
-@router.put("/add-to-study/{word_id}")
-async def add_word_to_study(word_id: int, date_repeated: str, level: int = 1):
-    conn = get_db_connection()
-    with conn.cursor() as cursor:
-        cursor.execute("""
-            UPDATE finnish_dictionary
-            SET level = %s, date_repeated = %s
-            WHERE id = %s
-        """, (level, date_repeated, word_id))
-        conn.commit()
-    conn.close()
-
-    return {"message": "Word added to study successfully"}
-
-
 @router.get("/repeat")
 async def get_words_for_repeat(
         level: int = Query(..., description="The level of words to repeat"),
@@ -302,6 +287,30 @@ async def upgrade_words_level(
     conn.close()
 
     return {"message": "Selected words have been upgraded to the next level"}
+
+
+@router.post("/bulk-update-level")
+async def bulk_update_level(
+    data: Dict[str, Any] = Body(...)
+):
+
+    ids = data.get("ids")
+    level = data.get("level")
+    date_repeated = data.get("date_repeated")
+
+    conn = get_db_connection()
+    with conn.cursor() as cursor:
+        # Construct a single query with WHERE id IN (...)
+        cursor.execute(f"""
+            UPDATE finnish_dictionary
+            SET level = %s, date_repeated = %s
+            WHERE id = ANY(%s::int[])
+        """, (level, date_repeated, ids))
+        conn.commit()
+    conn.close()
+
+    return {"message": "Selected words updated successfully"}
+
 
 @router.delete("/{word_id}")
 async def delete_word(word_id: int):
