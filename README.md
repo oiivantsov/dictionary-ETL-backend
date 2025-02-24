@@ -78,8 +78,8 @@ The system is containerized using Docker and orchestrated with Docker Compose. I
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://your-repo-url.git
-   cd your-repo-folder
+   git clone https://github.com/oiivantsov/dictionary-ETL-backend.git
+   cd dictionary-ETL-backend
    ```
 
 2. **Build and Start the Services:**
