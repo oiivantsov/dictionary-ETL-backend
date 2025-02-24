@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc0528b0-5c24-4299-9ed1-7ed9a0df2818" name="Changes" comment="add gitignore">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_example/connect_psql.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_example/start_db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/words.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/words.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/responser_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_main.http" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +55,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;FastAPI.dict_backend.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test_main | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test_main | #2.executor&quot;: &quot;Run&quot;,
     &quot;Python.wiktionary_eng_parser.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;docker&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/oiiva/Desktop/Finglish/python_projects/dict_backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -68,12 +75,19 @@
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend\data_example" />
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend\app\utils" />
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend\app\config" />
       <recent name="C:\Users\oiiva\Desktop\Finglish\python_projects\dict_backend\app\scrapers" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="FastAPI.dict_backend">
+    <configuration name="test_main | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test_main.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_main | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test_main.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="dict_backend" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
       <module name="dict_backend" />
@@ -89,6 +103,12 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.test_main | #2" />
+        <item itemvalue="HTTP Request.test_main | #1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -138,7 +158,9 @@
       <workItem from="1735169078437" duration="1314000" />
       <workItem from="1735179709976" duration="121000" />
       <workItem from="1735469309507" duration="641000" />
-      <workItem from="1735482627559" duration="3311000" />
+      <workItem from="1735482627559" duration="3847000" />
+      <workItem from="1735993050595" duration="72000" />
+      <workItem from="1740303354930" duration="16363000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <option name="closed" value="true" />
