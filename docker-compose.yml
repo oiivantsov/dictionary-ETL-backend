@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: dictionary
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: 5555
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./data_example/start_db.sql:/docker-entrypoint-initdb.d/start_db.sql:ro
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: dictionary
+      DB_USER: appuser
+      DB_PASSWORD: 5555
+
+volumes:
+  pgdata:
